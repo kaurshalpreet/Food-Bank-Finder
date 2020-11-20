@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Food Bank Finder</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}-
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="Center">
+<h2>Food Bank Finder</h2>
+<p>We created this application to help you out though this difficult times</p>
+<p>This application will help you fine local Food Donations around your area.</p>
+<p>We believe every one deserves a good thanksgiving including <strong>YOU</strong></p>
+</div>
+
+<header>
+  <h2>city/town</h2>
+  <h2>zipcode</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <h1>List</h1>
+      
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>Google Maps</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6502594.546087102!2d-119.306607!3d37.26917445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1605674273086!5m2!1sen!2sus" 
+            width="600" 
+            height="450" 
+            frameborder="0" 
+            style="border:0;" 
+            allowfullscreen="" 
+            aria-hidden="false" 
+            tabindex="0">
+            </iframe>
+  </article>
+</section>
+
+<footer>
+  <p>Hours/Days</p>
+</footer>
+
+</body>
+</html>
