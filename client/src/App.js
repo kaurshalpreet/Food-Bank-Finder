@@ -1,28 +1,18 @@
 import React from "react";
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-import NavBar from "./components/NavBar/navBar";
+import MainDiv from "./components/MainDiv/mainDiv";
+// import NavBar from "./components/NavBar/navBar";
+// import './components/NavBar/navBar.css'
+// import FoodBankLocations from "./components/FoodBankLocations/foodBankLocations";
+// import GoogleMap from './components/GoogleMap/googleMap';
+// import Aside from './components/Aside/aside';
 
 
 function App() {
   return (
     <div className="App">
-       <NavBar />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-     
+      <MainDiv />
     </div>
   );
 }
