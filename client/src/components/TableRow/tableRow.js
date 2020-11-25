@@ -1,15 +1,15 @@
-import React from 'react';
-import Btn from '../Btn/Btn';
+import React from "react";
+import Btn from "../Btn/Btn";
+import "./tableRow";
 
 function TableRow() {
-    return(
-        <tr>
-            <li>insert food bank</li>
-            <Btn>
-                Save
-            </Btn>
-        </tr>
-    )
+  return (
+    <tr className="tableRow my-1">
+      <li>
+        insert food bank <Btn />
+      </li>
+    </tr>
+  );
 }
 
 export default TableRow;
