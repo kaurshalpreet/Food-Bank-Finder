@@ -1,5 +1,5 @@
-import NavBar from "../NavBar/navBar";
-import "../NavBar/navBar.css";
+import NavBar from "../NavBar/NavBar";
+import "../NavBar/NavBar.css";
 import FoodBankLocations from "../FoodBankLocations/foodBankLocations";
 import GoogleMap from "../GoogleMap/googleMap";
 import HeaderComps from "../HeaderComps/HeaderComps";
@@ -12,10 +12,11 @@ function MainDiv() {
     <div className="m-4 mainDiv mx-auto">
       <NavBar />
       <HeaderComps />
-      <CitySearch placeholder="City Name" />
-      <CitySearch placeholder="Zipcode" />
-      <Button>Search Location</Button>
-      <FoodBankLocations />
+        <div>
+          <CitySearch />
+          <Button>Search Location</Button>
+        </div>
+      <FoodBankLocations/>
       <GoogleMap />
     </div>
   );

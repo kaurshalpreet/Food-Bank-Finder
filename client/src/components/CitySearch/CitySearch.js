@@ -6,7 +6,7 @@ function CitySearch() {
     <Form.Control
       size="sm"
       type="text"
-      placeholder="Small text"
+      placeholder="Enter Zipcode"
       className="col-2"
     />
   );
