@@ -7,7 +7,7 @@ function CitySearch() {
       size="sm"
       type="text"
       placeholder="Enter Zipcode"
-      className="col-2"
+      className="col-6 mx-auto"
     />
   );
 }
