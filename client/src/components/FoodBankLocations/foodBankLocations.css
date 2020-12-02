@@ -1,5 +1,5 @@
 .foodBanks {
     width: 800px; 
     height: 300px;
-    align-items: center;
+    border: solid black 5px;
 };
