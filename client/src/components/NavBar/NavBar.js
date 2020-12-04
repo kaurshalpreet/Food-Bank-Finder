@@ -32,30 +32,6 @@ function NavBar() {
               About <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Saved Locations
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="http://google.com">
-                Test
-              </a>
-              <a class="dropdown-item" href="#">
-                Another action
-              </a>
-              <a class="dropdown-item" href="#">
-                Something else here
-              </a>
-            </div>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               Sign In
@@ -64,7 +40,6 @@ function NavBar() {
         </ul>
       </div>
     </nav>
-
   );
 }
 
