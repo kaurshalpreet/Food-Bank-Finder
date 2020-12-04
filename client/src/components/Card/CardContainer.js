@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 
 function CardContainer() {
   return (
-    <Card style={{ width: "18rem" }} className="my-auto">
+    <Card style={{ width: "16rem" }} id="cardContainer">
       <Card.Body>
         <Card.Title className="mb-2 text-muted">
           Search Local Foodbanks
