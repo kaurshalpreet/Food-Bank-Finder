@@ -11,6 +11,7 @@ function CardContainer() {
   function searchFunc() {
     console.log("i've been clicked");
     //this /zip route is going to be the call to the api eventually...i think
+    //code works when lines 7-8 and 15-16 are commented. Backend route is currently not working
     router.route("/zip").post((req, res) => {
       console.log(res);
     });
