@@ -3,7 +3,20 @@ import Card from "react-bootstrap/Card";
 import CitySearch from "../CitySearch/CitySearch";
 import Button from "react-bootstrap/Button";
 
+//require express and express router
+const express = require("express");
+const router = require("express").Router();
+
 function CardContainer() {
+  function searchFunc() {
+    console.log("i've been clicked");
+    //this /zip route is going to be the call to the api eventually...i think
+    //code works when lines 7-8 and 15-16 are commented. Backend route is currently not working
+    router.route("/zip").post((req, res) => {
+      console.log(res);
+    });
+  }
+
   return (
     <Card style={{ width: "16rem" }} id="cardContainer">
       <Card.Body>
@@ -11,7 +24,9 @@ function CardContainer() {
           Search Local Foodbanks
         </Card.Title>
         <CitySearch />
-        <Button>Search Locations</Button>
+        <Button id="searchButton" onClick={searchFunc}>
+          Search Locations
+        </Button>
       </Card.Body>
     </Card>
   );
