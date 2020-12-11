@@ -1,35 +1,74 @@
 import React from "react";
+import axios from "axios";
 import Card from "react-bootstrap/Card";
 import CitySearch from "../CitySearch/CitySearch";
 import Button from "react-bootstrap/Button";
 
-//require express and express router
-const express = require("express");
-const router = require("express").Router();
+export default class CardContainer extends React.Component {
+  state = {
+    zipcode: "95628",
+  };
+  // var input = "#citySearch";
+  // var search = "#searchButton";
 
-function CardContainer() {
-  function searchFunc() {
-    console.log("i've been clicked");
-    //this /zip route is going to be the call to the api eventually...i think
-    //code works when lines 7-8 and 15-16 are commented. Backend route is currently not working
-    router.route("/zip").post((req, res) => {
-      console.log(res);
-    });
+  //const url = "https://controllerdata.lacity.org/resource/v2mg-qsxf.json?zip_code=";
+  handleChange = (event) => {
+    this.setState({ zipcode: event.target.value });
+    console.log(event.target.value);
+  };
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    // const zip = {
+    //   zipcode: this.state.zipcode,
+    // };
+
+    axios
+      .get(
+        `https://controllerdata.lacity.org/resource/v2mg-qsxf.json?zip_code=${this.state.zipcode}`
+      )
+      .then((res) => {
+        console.log(res);
+      });
+  };
+
+  // search.click(function () {
+  //       axios
+  //         .get(url,{
+  //           url: url + input.val(),
+  //          data: {
+  //            $limit: 3,
+  // $$app_token: "hsOYCdlUPwwQcEJAKfxONgoU0",
+  //         },
+  //       })
+  //       .done(function (data) {
+  //         alert("Retrieved " + data.length + " records from the dataset!");
+  //         console.log(data);
+  //       });
+  //   });
+
+  //   router.route("/zip").post((req, res) => {
+  //     console.log(res);
+  //   });
+  // }
+  render() {
+    return (
+      <Card style={{ width: "16rem" }} id="cardContainer">
+        <Card.Body>
+          <Card.Title className="mb-2 text-muted">
+            Search Local Foodbanks
+          </Card.Title>
+          <CitySearch />
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Person Name:
+              <input type="text" name="zipcode" onChange={this.handleChange} />
+            </label>
+            <button type="submit">Add</button>
+          </form>
+          <Button id="searchButton">Search Locations</Button>
+        </Card.Body>
+      </Card>
+    );
   }
-
-  return (
-    <Card style={{ width: "16rem" }} id="cardContainer">
-      <Card.Body>
-        <Card.Title className="mb-2 text-muted">
-          Search Local Foodbanks
-        </Card.Title>
-        <CitySearch />
-        <Button id="searchButton" onClick={searchFunc}>
-          Search Locations
-        </Button>
-      </Card.Body>
-    </Card>
-  );
 }
-
-export default CardContainer;
