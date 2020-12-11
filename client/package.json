@@ -6,9 +6,11 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.1",
     "@testing-library/user-event": "^12.2.2",
-    "axios": "^0.17.1",
+
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
+
+    "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "connect-mongo": "^2.0.1",
     "express": "^4.16.2",
