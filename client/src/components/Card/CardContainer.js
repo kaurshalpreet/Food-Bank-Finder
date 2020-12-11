@@ -24,7 +24,10 @@ export default class CardContainer extends React.Component {
 
     axios
       .get(
+
+
         `https://controllerdata.lacity.org/resource/v2mg-qsxf.json?zip_code=${this.state.zipcode}`
+
       )
       .then((res) => {
         console.log(res);
