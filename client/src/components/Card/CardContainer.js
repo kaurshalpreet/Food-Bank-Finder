@@ -8,8 +8,7 @@ export default class CardContainer extends React.Component {
   state = {
     zipcode: "95628",
   };
-  // var input = "#citySearch";
-  // var search = "#searchButton";
+ 
 
   //const url = "https://controllerdata.lacity.org/resource/v2mg-qsxf.json?zip_code=";
   handleChange = (event) => {
