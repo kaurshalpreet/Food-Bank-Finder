@@ -1,6 +1,4 @@
 .navbar {
-  background-color: #666;
-  padding: 30px;
   text-align: center;
   font-size: 20px;
   color: white;
@@ -8,4 +6,6 @@
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 2;
+  padding: 25px;
 }

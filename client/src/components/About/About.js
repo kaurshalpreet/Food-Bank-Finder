@@ -10,14 +10,12 @@ function About() {
       </div>
 
       <div id="text">
-        <p style={{ color: "white"}}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        <p style={{ color: "white" }}>
+          Food Bank Finder was created as a tool to encourage generosity and
+          support those in need--not just during the holiday season, but year
+          round. Food Bank Finder connects Californians to food banks near them
+          that are consistently serving our neighbors. Together we can make the
+          world a little better and help no one go hungry.
         </p>
       </div>
     </div>
