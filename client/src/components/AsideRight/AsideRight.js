@@ -5,7 +5,7 @@ import SavedDropdown from "../SavedDropdown/SavedDropdown";
 function AsideRight() {
   return (
     <div className="col-2 mx-right" id="asideRight">
-      <SavedDropdown />
+      {/* <SavedDropdown /> */}
     </div>
   );
 }
