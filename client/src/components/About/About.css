@@ -1,0 +1,21 @@
+#about {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  
+}
+
+#text {
+    height: 100%;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-bottom: 500px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    display: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
