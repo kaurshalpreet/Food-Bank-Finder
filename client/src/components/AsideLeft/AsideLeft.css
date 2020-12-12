@@ -1,0 +1,7 @@
+#asideLeft {
+  justify-content: left !important;
+  margin-top: 200px !important;
+  width: 25%;
+  position: absolute;
+  vertical-align: middle;
+}

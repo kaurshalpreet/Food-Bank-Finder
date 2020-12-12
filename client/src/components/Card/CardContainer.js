@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
-import CitySearch from "../CitySearch/CitySearch";
 import Button from "react-bootstrap/Button";
+//import "./CardContainer.css";
 
 export default class CardContainer extends React.Component {
   state = {
@@ -25,10 +25,7 @@ export default class CardContainer extends React.Component {
 
     axios
       .get(
-
-
         `https://controllerdata.lacity.org/resource/v2mg-qsxf.json?zip_code=${this.state.zipcode}`
-
       )
       .then((res) => {
         console.log(res);
@@ -61,13 +58,15 @@ export default class CardContainer extends React.Component {
           <Card.Title className="mb-2 text-muted">
             Search Local Foodbanks
           </Card.Title>
-          <CitySearch />
           <form onSubmit={this.handleSubmit}>
             <label>
-              Person Name:
-              <input type="text" name="zipcode" onChange={this.handleChange} />
+              <input
+                type="text"
+                name="zipcode"
+                placeholder="Enter Zipcode"
+                onChange={this.handleChange}
+              />
             </label>
-            <button type="submit">Add</button>
           </form>
           <Button id="searchButton">Search Locations</Button>
         </Card.Body>

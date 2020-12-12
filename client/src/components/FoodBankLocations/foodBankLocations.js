@@ -9,7 +9,7 @@ function FoodBankLocations() {
       striped
       bordered
       hover
-      variant="dark"
+      variant="light"
       className="foodBanks mx-auto"
       id="foodBankLocations"
     >

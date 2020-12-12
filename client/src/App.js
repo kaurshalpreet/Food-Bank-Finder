@@ -1,8 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 //import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 import MainDiv from "./components/MainDiv/MainDiv";
+import About from "./components/About/About";
+import NavBar from "./components/NavBar/NavBar";
 
 // Below code added by Shalpreet
 import SignIn from "./components/SignIn/SignIn";
@@ -25,18 +27,19 @@ import SignUp from "./components/SignUp/SignUp";
 // }
 // --------------------------------------------------------
 
-
 // Below code was added by shalpreet
 function App() {
   return (
-<Router>
-<div>
-  <Route exact path="/" component={SignIn} />
-  <Route exact path="/SignUp" component={SignUp} />
-  <Route path="/members" component={MainDiv} />
-</div>
-</Router>
-
-)}
+    <Router>
+      <div>
+        <NavBar />
+        <Route exact path="/" component={SignIn} />
+        <Route exact path="/SignUp" component={SignUp} />
+        <Route path="/members" component={MainDiv} />
+        <Route path="/about" component={About} />
+      </div>
+    </Router>
+  );
+}
 
 export default App;

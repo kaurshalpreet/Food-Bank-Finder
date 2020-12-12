@@ -1,10 +1,11 @@
 import React from "react";
 import FoodBankLocations from "../FoodBankLocations/foodBankLocations";
 import GoogleMap from "../GoogleMap/googleMap";
+import "./CenterDiv.css";
 
 function CenterDiv() {
   return (
-    <div className="col-8 mx-auto" id="centerDiv">
+    <div id="centerDiv">
       <FoodBankLocations />
       <GoogleMap />
     </div>

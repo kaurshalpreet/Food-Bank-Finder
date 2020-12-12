@@ -1,7 +1,9 @@
 .navbar {
-  background-color: #666;
-  padding: 30px;
-  text-align: center;
+  /* text-align: center;
   font-size: 20px;
-  color: white;
+  color: white; */
+  width: 100% !important;
+  position: fixed;
+  top: 0;
+  /*padding: 25px; */
 }
