@@ -1,7 +1,27 @@
-#container {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 #about {
   background-image: url("../../AdobeStock_336228679.jpeg");
+}
+#about {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#text {
+  margin-top: 40%;
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-bottom: 500px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  display: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  opacity: 75%;
+
+  position: static;
+  font-size: 24px;
 }

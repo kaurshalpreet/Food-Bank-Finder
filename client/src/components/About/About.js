@@ -1,18 +1,21 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
+import "./About.css";
 
 function About() {
   return (
-    <div id="about">
-      <NavBar />
-      <div id="container">
-        <h2>About</h2>
-        <p>
+    <div>
+      <div id="about" className="col-12 mx-auto">
+        <NavBar />
+      </div>
+
+      <div id="text">
+        <p style={{ color: "white" }}>
           Food Bank Finder was created as a tool to encourage generosity and
-          support those in need, not just during the holiday season. Food Bank
-          Finder connects Californians to food banks near them that are
-          consistently serving our neighbors. Together we can make the world a
-          little better and help no one go hungry.
+          support those in need--not just during the holiday season, but year
+          round. Food Bank Finder connects Californians to food banks near them
+          that are consistently serving our neighbors. Together we can make the
+          world a little better and help no one go hungry.
         </p>
       </div>
     </div>

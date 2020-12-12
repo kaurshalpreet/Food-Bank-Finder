@@ -1,4 +1,19 @@
 #cardContainer {
   /* margin-top: 200px !important; */
   border: solid black 5px;
+  justify-content: left;
+  width: 16rem !important;
+  position: sticky;
+  top: 33%;
+}
+
+#centerDiv {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 35px;
+  justify-content: right !important;
+  margin-top: 50px;
+  margin-left: 300px;
+  position: relative;
+  z-index: 1;
 }

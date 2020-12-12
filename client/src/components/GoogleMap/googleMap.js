@@ -3,7 +3,7 @@ import "./googleMap.css";
 
 function GoogleMap() {
   return (
-    <div className="col-8">
+    <div>
       <iframe
         title="Google Map"
         className="table-dark googleMap my-2 mx-auto"

@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar/NavBar";
 // Below code added by Shalpreet
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
+
 // ----------------------------------------
 
 // import NavBar from "./components/NavBar/navBar";
@@ -32,7 +33,7 @@ function App() {
   return (
     <Router>
       <div>
-        <NavBar />
+        {/* <NavBar /> */}
         <Route exact path="/" component={SignIn} />
         <Route exact path="/SignUp" component={SignUp} />
         <Route path="/members" component={MainDiv} />

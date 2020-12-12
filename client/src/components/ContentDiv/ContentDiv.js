@@ -6,11 +6,11 @@ import "./ContentDiv.css";
 
 function ContentDiv() {
   return (
-    <div id="contentDiv">
-      <AsideLeft />
-      <CenterDiv />
-      <AsideRight />
-    </div>
+    // <div id="contentDiv">
+    //   <AsideLeft />
+    //   <CenterDiv />
+    //   <AsideRight />
+    // </div>
   );
 }
 
