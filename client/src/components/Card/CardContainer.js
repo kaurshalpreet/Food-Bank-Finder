@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 // import CitySearch from "../CitySearch/CitySearch";
 // import Button from "react-bootstrap/Button";
 import FoodBankLocations from "../FoodBankLocations/FoodBankLocations";
+import GoogleMap from "../GoogleMap/googleMap";
 
 export default class CardContainer extends React.Component {
   constructor(props){
@@ -111,8 +112,8 @@ export default class CardContainer extends React.Component {
 
   render() {
     return (
-      <div>
-      <Card style={{ width: "16rem" }} id="cardContainer">
+      <div  className="col-8 mx-auto" id="centerDiv">
+      <Card style={{ width: "16rem", marginBottom: "25px"}} id="cardContainer">
         <Card.Body>
           <Card.Title className="mb-2 text-muted">
             Search Local Foodbanks
@@ -149,6 +150,10 @@ export default class CardContainer extends React.Component {
       hoursLocationThree={this.state.hoursThree}
       
       />
+
+      <GoogleMap />
+
+
       </div>
     );
   }
