@@ -6,6 +6,7 @@
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 
 #text {
@@ -21,4 +22,5 @@
   opacity: 80%;
   position: static;
   font-size: 24px;
+  z-index: 1;
 }
