@@ -1,14 +1,5 @@
-@media screen and (min-width: 544px) {
-  .googleMap {
-    width: 800px;
-    height: 300px;
-    border: solid black 5px;
-  }
-}
-
-@media screen and (max-width: 543px) {
-  .googleMap {
-    width: 100%;
-    height: auto;
-  }
+.googleMap {
+  width: 800px;
+  height: 300px;
+  border: solid black 5px;
 }
