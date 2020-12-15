@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar/NavBar";
 // Below code added by Shalpreet
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
+import SavedLocations from "./components/SavedLocations/SavedLocations"
 
 // ----------------------------------------
 
@@ -38,6 +39,7 @@ function App() {
         <Route exact path="/SignUp" component={SignUp} />
         <Route path="/members" component={MainDiv} />
         <Route path="/about" component={About} />
+        <Route path ="/SavedLocations" component={SavedLocations} />
       </div>
     </Router>
   );

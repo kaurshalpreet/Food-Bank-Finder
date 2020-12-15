@@ -1,14 +1,5 @@
-@media screen and (min-width: 800px) {
-  .foodBanks {
-    width: 800px;
-    height: 300px;
-    border: solid black 5px;
-  }
-}
-
-@media screen and (max-width: 799px) {
-  .foodBanks {
-    width: auto;
-    height: auto;
-  }
+.foodBanks {
+  width: 800px;
+  height: 300px;
+  border: solid black 5px;
 }
