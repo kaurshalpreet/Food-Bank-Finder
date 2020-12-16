@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import "./CardContainer.css";
 import FoodBankLocations from "../FoodBankLocations/FoodBankLocations";
 import GoogleMap from "../GoogleMap/googleMap";
@@ -23,6 +22,9 @@ export default class CardContainer extends React.Component {
       hoursOne: "",
       hoursTwo: "",
       hoursThree: "",
+      buttonOne: "",
+      buttonTwo: "",
+      buttonThree: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,7 +45,29 @@ export default class CardContainer extends React.Component {
       .then((res) => {
         console.log(res.data);
         if (res.data.length === 0) {
-          alert("No Food Bank found");
+          this.setState({ nameOne: "" });
+          this.setState({ linkOne: "" });
+          this.setState({ addressOne: "" });
+          this.setState({ cityOne: "" });
+          this.setState({ hoursOne: "" });
+          this.setState({ nameTwo: "" });
+          this.setState({ linkTwo: "" });
+          this.setState({ addressTwo: "" });
+          this.setState({ cityTwo: "" });
+          this.setState({ hoursTwo: "" });
+          this.setState({ nameThree: "" });
+          this.setState({ linkThree: "" });
+          this.setState({ addressThree: "" });
+          this.setState({ cityThree: "" });
+          this.setState({ hoursThree: "" }, () => {
+            alert("No Food Bank found");
+          });
+
+          this.setState({
+            buttonOne: "none",
+            buttonTwo: "none",
+            buttonThree: "none",
+          });
         } else if (res.data.length === 1) {
           this.setState({ nameOne: res.data[0].name });
           this.setState({ linkOne: res.data[0].web_link.url });
@@ -60,6 +84,11 @@ export default class CardContainer extends React.Component {
           this.setState({ addressThree: "" });
           this.setState({ cityThree: "" });
           this.setState({ hoursThree: "" });
+          this.setState({
+            buttonOne: "block",
+            buttonTwo: "none",
+            buttonThree: "none",
+          });
         } else if (res.data.length === 2) {
           this.setState({ nameOne: res.data[0].name });
           this.setState({ linkOne: res.data[0].web_link.url });
@@ -76,6 +105,11 @@ export default class CardContainer extends React.Component {
           this.setState({ addressThree: "" });
           this.setState({ cityThree: "" });
           this.setState({ hoursThree: "" });
+          this.setState({
+            buttonOne: "block",
+            buttonTwo: "block",
+            buttonThree: "none",
+          });
         } else if (res.data.length > 3) {
           this.setState({ nameOne: res.data[0].name });
           this.setState({ linkOne: res.data[0].web_link.url });
@@ -93,13 +127,18 @@ export default class CardContainer extends React.Component {
           this.setState({ cityThree: res.data[2].city });
           this.setState({ hoursThree: res.data[2].description });
           console.log(`${this.state.nameOne}`);
+          this.setState({
+            buttonOne: "block",
+            buttonTwo: "block",
+            buttonThree: "block",
+          });
         }
       });
   };
 
   render() {
     return (
-      <div className="col-12 mx-auto" id="contentDiv">
+      <div className="col-12 mx-auto">
         <Card
           style={{ width: "16rem", marginBottom: "25px" }}
           // className="col-4"
@@ -131,16 +170,19 @@ export default class CardContainer extends React.Component {
             addressLocationOne={this.state.addressOne}
             cityLocationOne={this.state.cityOne}
             hoursLocationOne={this.state.hoursOne}
+            buttonOne={this.state.buttonOne}
             nameLocationTwo={this.state.nameTwo}
             linkLocationTwo={this.state.linkTwo}
             addressLocationTwo={this.state.addressTwo}
             cityLocationTwo={this.state.cityTwo}
             hoursLocationTwo={this.state.hoursTwo}
+            buttonTwo={this.state.buttonTwo}
             nameLocationThree={this.state.nameThree}
             linkLocationThree={this.state.linkThree}
             addressLocationThree={this.state.addressThree}
             cityLocationThree={this.state.cityThree}
             hoursLocationThree={this.state.hoursThree}
+            buttonThree={this.state.buttonThree}
           />
 
           <GoogleMap />

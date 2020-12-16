@@ -8,7 +8,7 @@
 
 @media screen and (max-width: 799px) {
   .foodBanks {
-    width: auto;
+    width: 100%;
     height: auto;
   }
 }

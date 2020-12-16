@@ -3,6 +3,14 @@ const router = express.Router()
 const User = require('../database/models/user')
 const passport = require('../passport')
 
+var renderInfo ={
+    name: [],
+    link: [],
+    address: [],
+    city: [],
+    hours: []
+}
+
 router.post('/', (req, res) => {
     console.log('user signup');
 
@@ -73,20 +81,33 @@ router.post('/logout', (req, res) => {
     }
 })
 
-router.post('/save', (req,res) => {
- if (req.user) {
-     const input = req.body.input;
+router.post('/savedLocations', (req,res) => {
+
+    console.log("hit route");
+    console.log(req.body);
+    console.log(req.user.email);
+    res.send({msg: "kithe?"})
 
 
+if (req.user.email){
+console.log("user is "+req.user.email)
+var savelocal =     
+    {
+    name:req.body.name,
+    address: req.body.address,
+    link: req.body.link,
+    city: req.body.city,
+    hours: req.body.hours
+};
 
-const newUser = new User({
-    input: input
- })
+
+// const newUser = new User({
+//     input: input
+//  })
  
-
-     newUser.findOneAndUpdate(
+     User.findOneAndUpdate(
         {email: req.user.email}, // find a document with that filter
-        {input: newUser.input}, // document to insert when nothing was found
+        {$push : {name: savelocal.name,address:savelocal.address,link:savelocal.link,city:savelocal.city, hours:savelocal.hours}}, // document to insert when nothing was found
         {upsert: true, new: true, runValidators: true}, // options
         function (err, doc) { // callback
             if (err) {
@@ -101,6 +122,37 @@ const newUser = new User({
 })
 
 
+router.post('/renderSavedLocations', (req,res) => {
+
+    console.log("rendering backend");
+    console.log(req.user.email);
 
 
-module.exports = router
+
+ User.findOne({ email: req.user.email }, (err, response) => {
+
+// renderInfo = {
+//       name: response.name,
+//       link: response.link,
+//       address: response.address,
+//       city: response.city,
+//       hours: response.hours
+// }
+
+  if (err) {
+    console.log(err);
+  } else {
+      console.log("here is my response " + response)
+    res.send(response);
+
+  }
+
+
+ });
+
+
+})
+
+
+
+module.exports = router;
