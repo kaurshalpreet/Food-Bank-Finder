@@ -142,7 +142,9 @@ router.post('/renderSavedLocations', (req,res) => {
   if (err) {
     console.log(err);
   } else {
+      console.log("here is my response " + response)
     res.send(response);
+
   }
 
 

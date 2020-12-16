@@ -10,41 +10,48 @@ import "./SavedLocations.css";
 class SavedLocations extends React.Component {
     constructor(props){
         super(props);
+        this.state = {table:""}
         this.callSavedLocations = this.callSavedLocations.bind(this);
+
     }
 
     callSavedLocations(props){
-
-      // for (var i=0; i < this.props.name.length; i++){
-      //    const table = `<tr>
+      console.log(this.props)
+      // var len = this.props.data;
+      // for (var i=0; i < len.length; i++){
+      //    this.setState({table : `<tr>
       //    <td>
-      //    <a href=${this.props.link[i]} target="_blank" rel="noreferrer">${this.props.name[i]}</a>
+      //    <a href=${this.props.data.link[i]} target="_blank" rel="noreferrer">${this.props.data.name[i]}</a>
       //    </td>
-      //    <td >${this.props.address[i]}</td>
-      //    <td >${this.props.city[i]}</td>
-      //    <td >${this.props.hours[i]}</td>
+      //    <td >${this.props.data.address[i]}</td>
+      //    <td >${this.props.data.city[i]}</td>
+      //    <td >${this.props.data.hours[i]}</td>
       //  </tr>`
-
+      //    })
       // }
     }
 
 
-    render(props){
-      
 
+    render(props){
+        this.callSavedLocations(props);
+       
         return(
             <div>
 
         <div id="about" className="col-12 mx-auto">
-            <NavBar />
+            <NavBar 
+            />
         </div>
+        <div  id="centerTable">
 
             <Table
+            scope="row"
             striped
             bordered
             hover
-            variant="dark"
-            className="foodBanks mx-auto"
+            variant="light"
+            className="foodBanks mx-auto important"
             id="foodBankLocations"
           >
             <thead>
@@ -57,20 +64,23 @@ class SavedLocations extends React.Component {
             </thead>
             <tbody>
         
-          {this.callSavedLocations()}
+            <div value= {this.state.table}></div>
+
+          {/* {this.callSavedLocations()} */}
         {/* <tr>
           <td id="name1">
-          <a href={this.props.link} target="_blank" rel="noreferrer">{this.props.name}</a>
+          <a href={this.props.data.link} target="_blank" rel="noreferrer">{this.props.data.name}</a>
           </td>
-          <td id="address1">{this.props.address}</td>
-          <td id="city1">{this.props.city}</td>
-          <td id="description1">{this.props.hours}</td>
+          <td id="address1">{this.props.data.address}</td>
+          <td id="city1">{this.props.data.city}</td>
+          <td id="description1">{this.props.data.hours}</td>
         </tr> */}
         
         
         
       </tbody>
             </Table>
+            </div>
              
 {/* **********Add functionality to render the table here******************************* */}
 
