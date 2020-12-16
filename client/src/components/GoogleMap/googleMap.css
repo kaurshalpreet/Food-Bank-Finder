@@ -1,4 +1,4 @@
-@media screen and (min-width: 544px) {
+@media screen and (min-width: 800px) {
   .googleMap {
     width: 800px;
     height: 300px;
@@ -6,7 +6,7 @@
   }
 }
 
-@media screen and (max-width: 543px) {
+@media screen and (max-width: 799px) {
   .googleMap {
     width: 100%;
     height: auto;
