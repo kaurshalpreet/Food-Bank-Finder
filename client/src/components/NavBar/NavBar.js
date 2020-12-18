@@ -4,17 +4,20 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "./NavBar.css";
 import SavedLocations from '../SavedLocations/SavedLocations';
+import Button from "react-bootstrap/Button";
+import MainDiv from "../MainDiv/MainDiv"
 // import About from "../About/About";
 // import SavedLocations from "../SavedLocations/SavedLocations"
 // import { response } from 'express';
 // import AboutModal from "../AboutModal/AboutModal";
 
 class NavBar extends Component {
-  constructor() {
-      super()
+  constructor(props) {
+      super(props)
       this.state={name:[], link:[],address:[],city:[],hours:[]}
       this.logout = this.logout.bind(this)
       this.renderLocation = this.renderLocation.bind(this)
+      this.renderLocationOne = this.props.renderLocationOne
   }
 
   logout(event) {
@@ -29,7 +32,6 @@ class NavBar extends Component {
             email: null
           })
         }
-    
       })
       .catch(error => {
           console.log('Logout error')
@@ -38,25 +40,29 @@ class NavBar extends Component {
 
     renderLocation(event) {
       event.preventDefault()
-      console.log('rendering data')
-      axios.post('/user/renderSavedLocations').then(response => {
-        console.log(response.data)
-        // this.setState({name:response.data.name})
-        // this.setState({link:response.data.link})
-        // this.setState({city:response.data.city})
-        // this.setState({address:response.data.address})
-        // this.setState({hours:response.data.hours})
+      console.log('rendering data from Navbar')
+      this.props.renderLocationOne()
+      
 
-        window.location.replace("/SavedLocations")
-
-
-      })
-      .catch(error => {
-        console.log(error)
-    })
     }
+    //   axios.post('/user/renderSavedLocations').then(response => {
+    //     console.log(response.data)
+    //     // this.setState({name:response.data.name})
+    //     // this.setState({link:response.data.link})
+    //     // this.setState({city:response.data.city})
+    //     // this.setState({address:response.data.address})
+    //     // this.setState({hours:response.data.hours})
 
-  render() {
+    //     window.location.replace("/SavedLocations")
+
+
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    // })
+    // }
+
+  render(props) {
       const loggedIn = this.props.loggedIn;
       console.log('navbar render, props: ')
       console.log(this.props);
@@ -74,10 +80,10 @@ class NavBar extends Component {
       <li className="nav-item active">
         <a className="nav-link" href="/about">About <span className="sr-only">(current)</span></a>
       </li>
-      <li className="nav-item dropdown">
-        <a className="nav-link" href="/SavedLocations" onClick={this.renderLocation} id="navbarDropdownMenuLink">
+      <li  className="nav-item">
+        <Button onClick={this.renderLocation} >
           Saved Locations
-        </a>
+        </Button>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#/" onClick={this.logout} >Sign Out</a>
