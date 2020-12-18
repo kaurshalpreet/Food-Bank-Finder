@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React,  {Component}  from 'react';
 // import { Redirect } from 'react-router-dom';
 // import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -17,7 +17,6 @@ class NavBar extends Component {
       this.state={name:[], link:[],address:[],city:[],hours:[]}
       this.logout = this.logout.bind(this)
       this.renderLocation = this.renderLocation.bind(this)
-      this.renderLocationOne = this.props.renderLocationOne
   }
 
   logout(event) {
@@ -41,7 +40,7 @@ class NavBar extends Component {
     renderLocation(event) {
       event.preventDefault()
       console.log('rendering data from Navbar')
-      this.props.renderLocationOne()
+      this.props.renderLocationOne(event)
       
 
     }
@@ -81,7 +80,7 @@ class NavBar extends Component {
         <a className="nav-link" href="/about">About <span className="sr-only">(current)</span></a>
       </li>
       <li  className="nav-item">
-        <Button onClick={this.renderLocation} >
+        <Button onClick= {this.renderLocation}>
           Saved Locations
         </Button>
       </li>
