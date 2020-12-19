@@ -6,7 +6,6 @@ import FoodBankLocations from "../FoodBankLocations/FoodBankLocations";
 import GoogleMap from "../GoogleMap/googleMap";
 import SavedLocations from "../SavedLocations/SavedLocations";
 
-
 export default class CardContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -27,6 +26,7 @@ export default class CardContainer extends React.Component {
       buttonOne: "",
       buttonTwo: "",
       buttonThree: "",
+
       name:[],
       city:[],
       hours:[],
@@ -35,6 +35,7 @@ export default class CardContainer extends React.Component {
       showlocation: "none",
       showfoodbank: "none",
       showgooglemap: "inline"
+
 
     };
     this.handleChange = this.handleChange.bind(this);
@@ -57,27 +58,29 @@ export default class CardContainer extends React.Component {
       .then((res) => {
         console.log(res.data);
         if (res.data.length === 0) {
-        this.setState({nameOne: ""});
-        this.setState({linkOne: ""});
-        this.setState({addressOne: ""});
-        this.setState({cityOne: ""});
-        this.setState({hoursOne: ""});
-        this.setState({nameTwo: ""});
-        this.setState({linkTwo: ""})
-        this.setState({addressTwo: ""});
-        this.setState({cityTwo: ""});
-        this.setState({hoursTwo: ""});
-        this.setState({nameThree: ""});
-        this.setState({linkThree: ""})
-        this.setState({addressThree: ""});
-        this.setState({cityThree: ""});
-        this.setState({hoursThree: ""}, ()=> {
-          alert ("No Food Bank found");
-        }
-        );
-        
-        this.setState({buttonOne: "none", buttonTwo: "none", buttonThree: "none"})
-        
+          this.setState({ nameOne: "" });
+          this.setState({ linkOne: "" });
+          this.setState({ addressOne: "" });
+          this.setState({ cityOne: "" });
+          this.setState({ hoursOne: "" });
+          this.setState({ nameTwo: "" });
+          this.setState({ linkTwo: "" });
+          this.setState({ addressTwo: "" });
+          this.setState({ cityTwo: "" });
+          this.setState({ hoursTwo: "" });
+          this.setState({ nameThree: "" });
+          this.setState({ linkThree: "" });
+          this.setState({ addressThree: "" });
+          this.setState({ cityThree: "" });
+          this.setState({ hoursThree: "" }, () => {
+            alert("No Food Bank found");
+          });
+
+          this.setState({
+            buttonOne: "none",
+            buttonTwo: "none",
+            buttonThree: "none",
+          });
         } else if (res.data.length === 1) {
           this.setState({ nameOne: res.data[0].name });
           this.setState({ linkOne: res.data[0].web_link.url });
@@ -98,6 +101,7 @@ export default class CardContainer extends React.Component {
           this.setState({showfoodbank:"table"});
           this.setState({showgooglemap:"inline"});
           this.setState({showlocation:"none"});
+
         } else if (res.data.length === 2) {
           this.setState({ nameOne: res.data[0].name });
           this.setState({ linkOne: res.data[0].web_link.url });
@@ -118,6 +122,7 @@ export default class CardContainer extends React.Component {
           this.setState({showfoodbank:"table"});
           this.setState({showgooglemap:"inline"});
           this.setState({showlocation:"none"});
+
         } else if (res.data.length > 3) {
           this.setState({ nameOne: res.data[0].name });
           this.setState({ linkOne: res.data[0].web_link.url });
@@ -139,6 +144,7 @@ export default class CardContainer extends React.Component {
           this.setState({showfoodbank:"table"});
           this.setState({showgooglemap:"inline"});
           this.setState({showlocation:"none"});
+
         }
       });
   };
