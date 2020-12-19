@@ -39,7 +39,7 @@ function App() {
         <Route exact path="/SignUp" component={SignUp} />
         <Route path="/members" component={MainDiv} />
         <Route path="/about" component={About} />
-        <Route path ="/SavedLocations" component={SavedLocations} />
+        {/* <Route path ="/SavedLocations" component={SavedLocations} /> */}
       </div>
     </Router>
   );

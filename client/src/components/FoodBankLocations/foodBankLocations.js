@@ -87,7 +87,7 @@ class FoodBankLocations extends React.Component {
 
  render(props) {
   return (
-    <Table
+    <Table style={{display:this.props.showfoodbank}}
       striped
       bordered
       hover
