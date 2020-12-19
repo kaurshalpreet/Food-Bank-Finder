@@ -12,7 +12,7 @@
   padding: 35px;
   justify-content: right !important;
   margin-top: 30vh !important;
-  margin-left: 30vw !important;
+  /* margin-left: 30vw !important; */
 
   position: relative;
   z-index: 1;

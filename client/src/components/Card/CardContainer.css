@@ -26,6 +26,18 @@
   }
 }
 
+
+#centerDiv {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 35px;
+  justify-content: right !important;
+  margin-top: -300px ;
+  margin-left: 300px;
+  position: absolute;
+  z-index: 1;
+}
+
 @media screen and (min-width: 800px) {
   #cardContainer {
     border: solid black 5px;
@@ -36,14 +48,6 @@
     overflow: auto;
   }
 
-  #centerDiv {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    padding: 35px;
-    justify-content: right !important;
-    margin-top: 50px;
-    margin-left: 300px;
-    position: relative;
-    z-index: 1;
-  }
+
+
 }

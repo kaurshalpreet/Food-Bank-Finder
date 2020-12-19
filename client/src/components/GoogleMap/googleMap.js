@@ -1,9 +1,9 @@
 import React from "react";
 import "./googleMap.css";
 
-function GoogleMap() {
+function GoogleMap(props) {
   return (
-    <div>
+    <div style={{display:props.showgooglemap}}>
       <iframe
         title="Google Map"
         className="table-dark googleMap my-2 mx-auto"
