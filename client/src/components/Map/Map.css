@@ -1,0 +1,33 @@
+@media screen and (min-width: 800px) {
+  .mapContainer {
+    width: 800px !important;
+    height: 300px;
+    border: solid black 5px;
+  }
+
+  .sidebarStyle {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 12px;
+    background-color: #404040;
+    color: #ffffff;
+    z-index: 1 !important;
+    padding: 6px;
+    font-weight: bold;
+  }
+
+  #mapText {
+    background-color: white;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .mapContainer {
+    width: 100%;
+    height: auto;
+    border: solid black 5px;
+  }
+}
