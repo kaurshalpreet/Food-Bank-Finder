@@ -5,7 +5,6 @@ import "./CardContainer.css";
 import FoodBankLocations from "../FoodBankLocations/FoodBankLocations";
 import GoogleMap from "../GoogleMap/googleMap";
 
-
 export default class CardContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +24,7 @@ export default class CardContainer extends React.Component {
       hoursThree: "",
       buttonOne: "",
       buttonTwo: "",
-      buttonThree: ""
+      buttonThree: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,27 +45,29 @@ export default class CardContainer extends React.Component {
       .then((res) => {
         console.log(res.data);
         if (res.data.length === 0) {
-        this.setState({nameOne: ""});
-        this.setState({linkOne: ""});
-        this.setState({addressOne: ""});
-        this.setState({cityOne: ""});
-        this.setState({hoursOne: ""});
-        this.setState({nameTwo: ""});
-        this.setState({linkTwo: ""})
-        this.setState({addressTwo: ""});
-        this.setState({cityTwo: ""});
-        this.setState({hoursTwo: ""});
-        this.setState({nameThree: ""});
-        this.setState({linkThree: ""})
-        this.setState({addressThree: ""});
-        this.setState({cityThree: ""});
-        this.setState({hoursThree: ""}, ()=> {
-          alert ("No Food Bank found");
-        }
-        );
-        
-        this.setState({buttonOne: "none", buttonTwo: "none", buttonThree: "none"})
-        
+          this.setState({ nameOne: "" });
+          this.setState({ linkOne: "" });
+          this.setState({ addressOne: "" });
+          this.setState({ cityOne: "" });
+          this.setState({ hoursOne: "" });
+          this.setState({ nameTwo: "" });
+          this.setState({ linkTwo: "" });
+          this.setState({ addressTwo: "" });
+          this.setState({ cityTwo: "" });
+          this.setState({ hoursTwo: "" });
+          this.setState({ nameThree: "" });
+          this.setState({ linkThree: "" });
+          this.setState({ addressThree: "" });
+          this.setState({ cityThree: "" });
+          this.setState({ hoursThree: "" }, () => {
+            alert("No Food Bank found");
+          });
+
+          this.setState({
+            buttonOne: "none",
+            buttonTwo: "none",
+            buttonThree: "none",
+          });
         } else if (res.data.length === 1) {
           this.setState({ nameOne: res.data[0].name });
           this.setState({ linkOne: res.data[0].web_link.url });
@@ -83,7 +84,11 @@ export default class CardContainer extends React.Component {
           this.setState({ addressThree: "" });
           this.setState({ cityThree: "" });
           this.setState({ hoursThree: "" });
-          this.setState({buttonOne: "block", buttonTwo: "none", buttonThree: "none"})
+          this.setState({
+            buttonOne: "block",
+            buttonTwo: "none",
+            buttonThree: "none",
+          });
         } else if (res.data.length === 2) {
           this.setState({ nameOne: res.data[0].name });
           this.setState({ linkOne: res.data[0].web_link.url });
@@ -100,7 +105,11 @@ export default class CardContainer extends React.Component {
           this.setState({ addressThree: "" });
           this.setState({ cityThree: "" });
           this.setState({ hoursThree: "" });
-          this.setState({buttonOne: "block", buttonTwo: "block", buttonThree: "none"})
+          this.setState({
+            buttonOne: "block",
+            buttonTwo: "block",
+            buttonThree: "none",
+          });
         } else if (res.data.length > 3) {
           this.setState({ nameOne: res.data[0].name });
           this.setState({ linkOne: res.data[0].web_link.url });
@@ -118,7 +127,11 @@ export default class CardContainer extends React.Component {
           this.setState({ cityThree: res.data[2].city });
           this.setState({ hoursThree: res.data[2].description });
           console.log(`${this.state.nameOne}`);
-          this.setState({buttonOne: "block", buttonTwo: "block", buttonThree: "block"})
+          this.setState({
+            buttonOne: "block",
+            buttonTwo: "block",
+            buttonThree: "block",
+          });
         }
       });
   };
