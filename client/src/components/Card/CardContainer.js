@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import "./CardContainer.css";
 import FoodBankLocations from "../FoodBankLocations/FoodBankLocations";
 import SavedLocations from "../SavedLocations/SavedLocations";
-import Map from "../Map/Map";
+import Application from "../Map/Map";
 
 export default class CardContainer extends React.Component {
   constructor(props) {
@@ -242,7 +242,7 @@ export default class CardContainer extends React.Component {
             buttonThree={this.state.buttonThree}
           />
 
-          <Map showgooglemap={this.state.showgooglemap} />
+          <Application showgooglemap={this.state.showgooglemap} />
 
           <SavedLocations
             showlocation={this.state.showlocation}

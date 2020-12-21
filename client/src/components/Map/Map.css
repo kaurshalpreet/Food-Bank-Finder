@@ -5,7 +5,7 @@
     border: solid black 5px;
   }
 
-  .sidebarStyle {
+  /* .sidebarStyle {
     display: inline-block;
     position: absolute;
     top: 0;
@@ -14,20 +14,30 @@
     background-color: #404040;
     color: #ffffff;
     z-index: 1 !important;
-    padding: 6px;
     font-weight: bold;
-  }
+  } */
 
   #mapText {
-    background-color: white;
     padding: 10px;
+    color: white;
+    font-weight: 200;
   }
 }
 
 @media screen and (max-width: 799px) {
   .mapContainer {
-    width: 100%;
-    height: auto;
+    width: 400px !important;
+    height: 300px !important;
     border: solid black 5px;
+  }
+
+  .mapboxgl-canvas {
+    height: auto;
+  }
+
+  #mapText {
+    padding: 10px;
+    color: white;
+    font-weight: 200;
   }
 }
