@@ -1,0 +1,43 @@
+@media screen and (min-width: 800px) {
+  .mapContainer {
+    width: 800px !important;
+    height: 300px;
+    border: solid black 5px;
+  }
+
+  /* .sidebarStyle {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 12px;
+    background-color: #404040;
+    color: #ffffff;
+    z-index: 1 !important;
+    font-weight: bold;
+  } */
+
+  #mapText {
+    padding: 10px;
+    color: white;
+    font-weight: 200;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .mapContainer {
+    width: 400px !important;
+    height: 300px !important;
+    border: solid black 5px;
+  }
+
+  .mapboxgl-canvas {
+    height: auto;
+  }
+
+  #mapText {
+    padding: 10px;
+    color: white;
+    font-weight: 200;
+  }
+}
