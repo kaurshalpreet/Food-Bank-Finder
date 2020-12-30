@@ -1,14 +1,34 @@
 import React from "react";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
-import CitySearch from "../CitySearch/CitySearch";
-import Button from "react-bootstrap/Button";
+// import CitySearch from "../CitySearch/CitySearch";
+// import Button from "react-bootstrap/Button";
+import FoodBankLocations from "../FoodBankLocations/FoodBankLocations";
+import GoogleMap from "../GoogleMap/googleMap";
 
 export default class CardContainer extends React.Component {
-  state = {
-    zipcode: "95628",
-  };
- 
+  constructor(props){
+    super(props);
+    this.state = {
+      zipcode: "95628",
+      nameOne: "",
+      nameTwo: "",
+      nameThree: "",
+      addressOne: "",
+      addressTwo: "",
+      addressThree: "",
+      cityOne: "",
+      cityTwo: "",
+      cityThree: "",
+      hoursOne: "",
+      hoursTwo: "",
+      hoursThree: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+
 
   //const url = "https://controllerdata.lacity.org/resource/v2mg-qsxf.json?zip_code=";
   handleChange = (event) => {
@@ -18,10 +38,6 @@ export default class CardContainer extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    // const zip = {
-    //   zipcode: this.state.zipcode,
-    // };
-
     axios
       .get(
 
@@ -30,47 +46,115 @@ export default class CardContainer extends React.Component {
 
       )
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
+        if (res.data.length === 0) {
+          alert ("No Food Bank found");
+        }
+        else if (res.data.length === 1){
+        this.setState({nameOne: res.data[0].name});
+        this.setState({linkOne: res.data[0].web_link.url})
+        this.setState({addressOne: res.data[0].street_address});
+        this.setState({cityOne: res.data[0].city});
+        this.setState({hoursOne: res.data[0].description});
+        this.setState({nameTwo: ""});
+        this.setState({linkTwo: ""})
+        this.setState({addressTwo: ""});
+        this.setState({cityTwo: ""});
+        this.setState({hoursTwo: ""});
+        this.setState({nameThree: ""});
+        this.setState({linkThree: ""})
+        this.setState({addressThree: ""});
+        this.setState({cityThree: ""});
+        this.setState({hoursThree: ""});
+        }
+        else if (res.data.length === 2){
+        this.setState({nameOne: res.data[0].name});
+        this.setState({linkOne: res.data[0].web_link.url})
+        this.setState({addressOne: res.data[0].street_address});
+        this.setState({cityOne: res.data[0].city});
+        this.setState({hoursOne: res.data[0].description});
+        this.setState({nameTwo: res.data[1].name});
+        this.setState({linkTwo: res.data[1].web_link.url})
+        this.setState({addressTwo: res.data[1].street_address});
+        this.setState({cityTwo: res.data[1].city});
+        this.setState({hoursTwo: res.data[1].description});
+        this.setState({nameThree: ""});
+        this.setState({linkThree: ""})
+        this.setState({addressThree: ""});
+        this.setState({cityThree: ""});
+        this.setState({hoursThree: ""});
+
+        }
+        else if(res.data.length > 3) {
+        this.setState({nameOne: res.data[0].name});
+        this.setState({linkOne: res.data[0].web_link.url})
+        this.setState({addressOne: res.data[0].street_address});
+        this.setState({cityOne: res.data[0].city});
+        this.setState({hoursOne: res.data[0].description});
+        this.setState({nameTwo: res.data[1].name});
+        this.setState({linkTwo: res.data[1].web_link.url})
+        this.setState({addressTwo: res.data[1].street_address});
+        this.setState({cityTwo: res.data[1].city});
+        this.setState({hoursTwo: res.data[1].description});
+        this.setState({nameThree: res.data[2].name});
+        this.setState({linkThree: res.data[2].web_link.url})
+        this.setState({addressThree: res.data[2].street_address});
+        this.setState({cityThree: res.data[2].city});
+        this.setState({hoursThree: res.data[2].description});
+        console.log(`${this.state.nameOne}`);
+        }
+
+
       });
+
+      
   };
 
-  // search.click(function () {
-  //       axios
-  //         .get(url,{
-  //           url: url + input.val(),
-  //          data: {
-  //            $limit: 3,
-  // $$app_token: "hsOYCdlUPwwQcEJAKfxONgoU0",
-  //         },
-  //       })
-  //       .done(function (data) {
-  //         alert("Retrieved " + data.length + " records from the dataset!");
-  //         console.log(data);
-  //       });
-  //   });
-
-  //   router.route("/zip").post((req, res) => {
-  //     console.log(res);
-  //   });
-  // }
   render() {
     return (
-      <Card style={{ width: "16rem" }} id="cardContainer">
+      <div  className="col-8 mx-auto" id="centerDiv">
+      <Card style={{ width: "16rem", marginBottom: "25px"}} id="cardContainer">
         <Card.Body>
           <Card.Title className="mb-2 text-muted">
             Search Local Foodbanks
           </Card.Title>
-          <CitySearch />
           <form onSubmit={this.handleSubmit}>
             <label>
-              Person Name:
+              Enter Zip Code
               <input type="text" name="zipcode" onChange={this.handleChange} />
             </label>
-            <button type="submit">Add</button>
+            <button id="searchButton" className="col-6 mx-auto" type="submit">Search</button>
           </form>
-          <Button id="searchButton">Search Locations</Button>
+      
         </Card.Body>
       </Card>
+      <FoodBankLocations
+
+      nameLocationOne={this.state.nameOne}
+      linkLocationOne={this.state.linkOne}
+      addressLocationOne={this.state.addressOne}
+      cityLocationOne={this.state.cityOne}
+      hoursLocationOne={this.state.hoursOne}
+      
+      nameLocationTwo={this.state.nameTwo}
+      linkLocationTwo={this.state.linkTwo}
+      addressLocationTwo={this.state.addressTwo}
+      cityLocationTwo={this.state.cityTwo}
+      hoursLocationTwo={this.state.hoursTwo}
+
+
+      nameLocationThree={this.state.nameThree}
+      linkLocationThree={this.state.linkThree}
+      addressLocationThree={this.state.addressThree}
+      cityLocationThree={this.state.cityThree}
+      hoursLocationThree={this.state.hoursThree}
+      
+      />
+
+      <GoogleMap />
+
+
+      </div>
     );
   }
 }

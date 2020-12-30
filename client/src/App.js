@@ -7,6 +7,8 @@ import MainDiv from "./components/MainDiv/MainDiv";
 // Below code added by Shalpreet
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
+import About from "./components/About/About";
+
 // ----------------------------------------
 
 // import NavBar from "./components/NavBar/navBar";
@@ -34,6 +36,7 @@ function App() {
   <Route exact path="/" component={SignIn} />
   <Route exact path="/SignUp" component={SignUp} />
   <Route path="/members" component={MainDiv} />
+  <Route path ="/about" component={About} />
 </div>
 </Router>
 
